@@ -20,6 +20,13 @@ pyenv local sample-graphql-api
 poetry init
 ```
 
+- Install and init `django`
+
+```
+poetry add django
+django-admin startproject api
+```
+
 [pyenv]: https://github.com/pyenv/pyenv-installer
 
 [poetry]: https://python-poetry.org/docs/#installation
