@@ -27,6 +27,25 @@ poetry add django
 django-admin startproject api
 ```
 
+- Add `graphql_api` app
+
+```
+python manage.py startapp graphene_api
+```
+
+- Install `graphene-django`
+
+```
+poetry add graphene-django
+```
+
+- define `hello` query
+- generate `schema.graphql`
+
+```
+python manage.py graphql_schema --out schema.graphql
+```
+
 [pyenv]: https://github.com/pyenv/pyenv-installer
 
 [poetry]: https://python-poetry.org/docs/#installation
