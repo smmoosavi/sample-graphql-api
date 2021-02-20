@@ -46,6 +46,12 @@ poetry add graphene-django
 python manage.py graphql_schema --out schema.graphql
 ```
 
+- Add `posts` app
+
+```
+python manage.py startapp posts
+```
+
 [pyenv]: https://github.com/pyenv/pyenv-installer
 
 [poetry]: https://python-poetry.org/docs/#installation
