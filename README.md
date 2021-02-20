@@ -52,6 +52,8 @@ python manage.py graphql_schema --out schema.graphql
 python manage.py startapp posts
 ```
 
+- Add `Post` and `Comment` model
+
 [pyenv]: https://github.com/pyenv/pyenv-installer
 
 [poetry]: https://python-poetry.org/docs/#installation
