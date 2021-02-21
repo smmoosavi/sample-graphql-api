@@ -53,6 +53,7 @@ python manage.py startapp posts
 ```
 
 - Add `Post` and `Comment` model
+- Add `PostType` to graphql
 
 [pyenv]: https://github.com/pyenv/pyenv-installer
 
