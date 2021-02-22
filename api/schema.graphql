@@ -2,13 +2,29 @@ schema {
   query: Query
 }
 
+type CommentType {
+  id: ID!
+  post: PostType!
+  text: String!
+  author: UserType!
+}
+
 type PostType {
   id: ID!
   title: String!
   body: String!
+  author: UserType!
+  comments: [CommentType!]!
 }
 
 type Query {
   post(id: ID!): PostType
   hello: String
+}
+
+type UserType {
+  id: ID!
+  username: String!
+  firstName: String!
+  lastName: String!
 }
