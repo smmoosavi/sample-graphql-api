@@ -1,5 +1,6 @@
 schema {
   query: Query
+  mutation: Mutation
 }
 
 type CommentType {
@@ -7,6 +8,21 @@ type CommentType {
   post: PostType!
   text: String!
   author: UserType!
+}
+
+input LoginMutationInput {
+  username: String!
+  password: String!
+  clientMutationId: String
+}
+
+type LoginMutationPayload {
+  user: UserType
+  clientMutationId: String
+}
+
+type Mutation {
+  login(input: LoginMutationInput!): LoginMutationPayload!
 }
 
 type PostType {
@@ -18,6 +34,7 @@ type PostType {
 }
 
 type Query {
+  me: UserType
   post(id: ID!): PostType
   hello: String
 }

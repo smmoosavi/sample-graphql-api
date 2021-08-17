@@ -1,14 +1,7 @@
 import graphene
-from django.contrib.auth import get_user_model
 from graphene_django import DjangoObjectType
 
 from posts.models import Post, Comment
-
-
-class UserType(DjangoObjectType):
-    class Meta:
-        model = get_user_model()
-        fields = ('id', 'username', 'first_name', 'last_name')
 
 
 class CommentType(DjangoObjectType):
