@@ -1,4 +1,5 @@
 import graphene
+from django.db.models import Q
 from graphene_django import DjangoObjectType
 
 from posts.models import Post, Comment
@@ -30,3 +31,9 @@ class PostQuery:
             return Post.objects.get(id=post_id)
         except:
             return None
+
+    posts = graphene.List(graphene.NonNull(PostType), required=True)
+
+    def resolve_posts(self, info, **kwargs):
+        user = info.context.user
+        return Post.objects.filter(Q(published=True) | Q(author=user))
