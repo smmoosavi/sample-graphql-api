@@ -2,6 +2,7 @@ import graphene
 from django.db.models import Q
 from graphene_django import DjangoObjectType
 
+from posts.interactors import get_all_posts
 from posts.models import Post, Comment
 
 
@@ -36,4 +37,4 @@ class PostQuery:
 
     def resolve_posts(self, info, **kwargs):
         user = info.context.user
-        return Post.objects.filter(Q(published=True) | Q(author=user))
+        return get_all_posts(viewer=user)
