@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     'graphene_django',
 
+    'users',
     'posts',
 ]
 
